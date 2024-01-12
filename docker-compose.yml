@@ -24,7 +24,7 @@ services:
       - mynetwork
 
   web:
-    build: ../../KhoaHT3EShopFEReact/khoaht3-eshop
+    build: ../FE/khoaht3-eshop
     ports:
       - 3000:3000
     environment:
