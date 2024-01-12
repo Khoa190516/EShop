@@ -99,7 +99,7 @@ namespace EShopAPI
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-
+                //app.UseHttpsRedirection();
             }
 
             app.UseCors("AllowAll");
@@ -112,7 +112,7 @@ namespace EShopAPI
 
             app.UseAuthorization();
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
