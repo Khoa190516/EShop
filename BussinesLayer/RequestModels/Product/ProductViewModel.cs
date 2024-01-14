@@ -18,6 +18,8 @@ namespace BussinesLayer.RequestModels.Product
         public decimal Price { get; set; } = 0;
 
         public int Stock { get; set; } = 0;
+
+        public float Rating { get; set; } = 0;
         
         public int AvailableStock { get; set; } = 0;
 

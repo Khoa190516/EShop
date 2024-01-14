@@ -18,6 +18,8 @@ namespace DomainLayer.Entities
 
         public float DiscountPercentage { get; set; } = 0;
 
+        public float Rating { get; set; } = 0;
+
         public string Thumbnail { get; set; } = string.Empty;
 
         public Guid CategoryId { get; set; }

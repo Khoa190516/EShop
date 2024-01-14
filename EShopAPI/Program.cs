@@ -52,7 +52,7 @@ namespace EShopAPI
 
             builder.Services.AddDbContext<ApplicationContext>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("LocalConnection"));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("KhoaHT3Connection"));
             });
 
             // Add CORS

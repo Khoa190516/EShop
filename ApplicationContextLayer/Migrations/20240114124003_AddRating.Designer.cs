@@ -4,6 +4,7 @@ using ApplicationContextLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApplicationContextLayer.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240114124003_AddRating")]
+    partial class AddRating
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -219,7 +222,7 @@ namespace ApplicationContextLayer.Migrations
                             DiscountPercentage = 5f,
                             Images = "https://cdn.dummyjson.com/product-images/2/1.jpg,https://cdn.dummyjson.com/product-images/2/2.jpg,https://cdn.dummyjson.com/product-images/2/3.jpg",
                             Price = 1500m,
-                            Rating = 4.5f,
+                            Rating = 0f,
                             Stock = 200,
                             Thumbnail = "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg",
                             Title = "Iphone X"
@@ -233,7 +236,7 @@ namespace ApplicationContextLayer.Migrations
                             DiscountPercentage = 10f,
                             Images = "https://cdn.dummyjson.com/product-images/3/1.jpg,https://cdn.dummyjson.com/product-images/2/3.jpg",
                             Price = 1000m,
-                            Rating = 4.7f,
+                            Rating = 0f,
                             Stock = 400,
                             Thumbnail = "https://cdn.dummyjson.com/product-images/3/thumbnail.jpg",
                             Title = "Samsung Universe 9"
@@ -247,7 +250,7 @@ namespace ApplicationContextLayer.Migrations
                             DiscountPercentage = 15f,
                             Images = "https://cdn.dummyjson.com/product-images/6/1.png,https://cdn.dummyjson.com/product-images/6/2.jpg",
                             Price = 2500m,
-                            Rating = 4.3f,
+                            Rating = 0f,
                             Stock = 300,
                             Thumbnail = "https://cdn.dummyjson.com/product-images/6/thumbnail.png",
                             Title = "MacBook Pro"
@@ -261,7 +264,7 @@ namespace ApplicationContextLayer.Migrations
                             DiscountPercentage = 20f,
                             Images = "https://cdn.dummyjson.com/product-images/7/1.jpg,https://cdn.dummyjson.com/product-images/7/2.jpg",
                             Price = 1499m,
-                            Rating = 5f,
+                            Rating = 0f,
                             Stock = 100,
                             Thumbnail = "https://cdn.dummyjson.com/product-images/7/thumbnail.jpg",
                             Title = "Samsung Galaxy Book"

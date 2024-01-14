@@ -164,5 +164,21 @@ namespace BussinesLayer.Service.Services
             }
             return new ApiResponse().SetBadRequest("Product is not exist in cart");
         }
+
+        public async Task<ApiResponse> RemoveProductFromCart(Guid userId, Guid productId)
+        {
+            var cart = await _unitOfWork.CartRepository.GetCartWithProductIdsByUserId(userId);
+            if(cart != null && cart.CartProducts != null && cart.CartProducts.Count > 0)
+            {
+                var existedProduct = cart.CartProducts.FirstOrDefault(product => product.ProductId == productId);
+                if (existedProduct is not null)
+                {
+                    cart.CartProducts.Remove(existedProduct);
+                    await _unitOfWork.SaveChangeAsync();
+                    return new ApiResponse().SetOk(true);
+                }
+            }
+            return new ApiResponse().SetNotFound();
+        }
     }
 }

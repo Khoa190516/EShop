@@ -13,5 +13,6 @@ namespace BussinesLayer.Service.IServices
         Task<ApiResponse> GetCartByUserId(Guid userId);
         Task<ApiResponse> UpdateProductToCart(Guid userId, CartProductUpdateModel productAdd);
         Task<ApiResponse> DecreaseProductFromCart(Guid userId, CartProductUpdateModel productAdd);
+        Task<ApiResponse> RemoveProductFromCart(Guid userId, Guid productId);
     }
 }

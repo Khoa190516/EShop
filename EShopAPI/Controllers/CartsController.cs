@@ -71,5 +71,24 @@ namespace EShopAPI.Controllers
             if (response == null) return BadRequest();
             return Ok(response);
         }
+
+        [Authorize(Roles = "Customer, Admin")]
+        [HttpDelete("{productId}")]
+        public async Task<IActionResult> RemoveProductFromCart(Guid productId)
+        {
+            var identityClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (identityClaim is null) return Unauthorized();
+
+            var isGuidId = Guid.TryParse(identityClaim.Value, out Guid userId);
+
+            if (!isGuidId)
+            {
+                return BadRequest();
+            }
+
+            var response = await _cartService.RemoveProductFromCart(userId, productId);
+            if (response == null) return BadRequest();
+            return Ok(response);
+        }
     }
 }

@@ -34,7 +34,8 @@ namespace BussinesLayer.Service.Services
                     Id = product.Id,
                     Title = product.Title,
                     Description = product.Description,
-                    Price =             product.Price,
+                    Price = product.Price,
+                    Rating = product.Rating,
                     BranchId = product.BranchId,
                     CategoryId = product.Category.Id,
                     BranchName = product.Branch.BranchName,
@@ -68,6 +69,7 @@ namespace BussinesLayer.Service.Services
                 CategoryName = x.Category.CategoryName,
                 Thumbnail = x.Thumbnail,
                 Stock = x.Stock,
+                Rating = x.Rating,
                 Images = x.Images.Split(',').ToList(),
             }).ToList();
 
